@@ -15,18 +15,40 @@ def ingresarusuario():
     respuesta = jsonify ({"error": False, "mensaje": "Todo bien", "usuario":"normal"})
     return (respuesta)
 
+@app.route ("/signup", methods=['POST'])
+def sign_up():
+    nombre =(request.json['nombre'])
+    genero =(request.json['genero'])
+    username =(request.json['username'])
+    email =(request.json['email'])
+    password =(request.json['password'])
+    if len(password) >= 8 :
+        if tiene_numero(password):
+             
+            if tiene_simbolo(password):
+              respuesta = jsonify ({"error": False, "mensaje": "Todo bien", "estado":"Contraseña correcta"})
+            else: 
+                respuesta = jsonify ({"error": False, "mensaje": "Todo bien", "estado":"Contraseña debe tener al menos un simbolo"})
+        else:
+            respuesta = jsonify ({"error": False, "mensaje": "Todo bien", "estado":"Contraseña debe tener al menos un número"})
+    else:
+          respuesta = jsonify ({"error": False, "mensaje": "Todo bien", "estado":"Contraseña debe tener al menos 8 caracteres"})
+    return (respuesta)
 
-vocales = 0
 
 
-def es_vocal(frase): 
-    global vocales 
-    vocales = 0
-    fraseMinusculas = frase.lower()
-    for letra in fraseMinusculas: 
-        if ord (letra) == 97 or ord (letra) == 101 or ord (letra) == 105 or ord (letra) == 111 or ord (letra) == 117:
-            vocales+=1 
-    print(vocales)
+def tiene_numero(password): 
+    for i in password: 
+        if ord (i) >= 48 and ord (i)<= 57:
+            return True
+    return False
+
+def tiene_simbolo(password): 
+    for i in password: 
+        if (ord (i) >= 33 and ord (i)<= 47 ) or (ord (i) >= 58 and ord (i)<= 64 ) or(ord (i) >= 91 and ord (i)<= 96 ) or (ord (i) >= 123 and ord (i)<= 126 ):
+            return True
+    return False
+
 
 #Fin actividad1-------------------------------------------------------------------------------------
 
