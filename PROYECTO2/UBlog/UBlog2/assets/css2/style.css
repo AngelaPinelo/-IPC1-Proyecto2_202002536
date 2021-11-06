@@ -1,11 +1,4 @@
-/**
-* Template Name: Marco
-* Template URL: https://templatemag.com/marco-bootstrap-agency-template/
-* Author: TemplateMag.com
-* License: https://templatemag.com/license/
-*/
 
-/* OVERALL ASPECT */
 
 body {
     background-color: #f2f2f2;
@@ -434,7 +427,7 @@ p.capitalize:first-letter {
 
 /* ================== CALL TO ACTION WRAP SECTIONS & HELPERS ================== */
 #cta01 {
-	background: url(../img/portfolio/fondo1.png) no-repeat center top;
+	background: url(../img/fondo1.png) no-repeat center top;
 	margin-top: 0px;
 	padding-top:100px;
 	text-align:center;
@@ -474,7 +467,7 @@ p.capitalize:first-letter {
 
 
 #cta02 {
-	background: url(../img/portfolio/fondo1.png) no-repeat center top;
+	background: url(../img/fondo1.png) no-repeat center top;
 	margin-top: 0px;
 	padding-top:100px;
 	text-align:center;
@@ -502,7 +495,7 @@ p.capitalize:first-letter {
 
 
 #cta03 {
-	background: url(../img/portfolio/fondo1.png) no-repeat center top;
+	background: url(../img/fondo1.png) no-repeat center top;
 	margin-top: 0px;
 	padding-top:50px;
 	text-align:center;

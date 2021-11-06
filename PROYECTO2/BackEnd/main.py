@@ -21,10 +21,13 @@ def sign_up():
     genero =(request.json['genero'])
     username =(request.json['username'])
     email =(request.json['email'])
+    if tiene_arroba(email):
+        print ("todo bien")
+    else: 
+        respuesta = jsonify ({"error": False, "mensaje": "Todo bien", "estado":"El Correo debe contener @"})
     password =(request.json['password'])
     if len(password) >= 8 :
-        if tiene_numero(password):
-             
+        if tiene_numero(password): 
             if tiene_simbolo(password):
               respuesta = jsonify ({"error": False, "mensaje": "Todo bien", "estado":"Contraseña correcta"})
             else: 
@@ -46,6 +49,12 @@ def tiene_numero(password):
 def tiene_simbolo(password): 
     for i in password: 
         if (ord (i) >= 33 and ord (i)<= 47 ) or (ord (i) >= 58 and ord (i)<= 64 ) or(ord (i) >= 91 and ord (i)<= 96 ) or (ord (i) >= 123 and ord (i)<= 126 ):
+            return True
+    return False
+
+def tiene_arroba(email): 
+    for i in email: 
+        if ord (i) == 64:
             return True
     return False
 
